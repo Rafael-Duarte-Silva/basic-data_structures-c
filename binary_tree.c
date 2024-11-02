@@ -52,7 +52,11 @@ void insertNode(node **root, int item)
     node *ptr = *root;
     while (ptr != NULL)
     {
-        if (item < ptr->number)
+        if (item == ptr->number)
+        {
+            break;
+        }
+        else if (item < ptr->number)
         {
             if (ptr->left == NULL)
             {
@@ -61,7 +65,7 @@ void insertNode(node **root, int item)
             }
             ptr = ptr->left;
         }
-        else if (item > ptr->number)
+        else
         {
             if (ptr->right == NULL)
             {
